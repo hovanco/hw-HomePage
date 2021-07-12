@@ -1,0 +1,15 @@
+@media (max-width: 425px) and (min-width: 375px) {
+    .statistical-content .number-statistical {
+        font-size: 25px;
+    }
+}
+@media (min-width: 1440px) {
+    .card-introduce {
+        height: 639px;
+    }
+}
+@media (max-width: 1024px) and (min-width: 375px) {
+    .card-introduce {
+        height: 450px;
+    }
+}

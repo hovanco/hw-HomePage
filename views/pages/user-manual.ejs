@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+
+        <title>Insa - Hướng dẫn sử dụng</title>
+    </head>
+    <body>
+        <!-- header -->
+        <%- include('../partials/header.ejs'), {user: user} %>
+        <!-- main -->
+        <main class="main my-12">
+            <div class="container xl:max-w-7xl mx-auto px-5">
+                <div class="text-center border-gray-200 mb-16">
+                    <h5 class="text-4xl">Hướng dẫn sử dụng</h5>
+                </div>
+                <!-- list news -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                    <% posts.posts.forEach(function(post) { %>
+                    <div class="border border-gray-200 p-6">
+                        <div class="uppercase text-gray-600 text-xs">
+                            <%- new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'long',
+                            year: 'numeric' }).format(new Date(post.date)) %>
+                        </div>
+                        <h3 class="text-xl mt-2 mb-3">
+                            <a href="/huong-dan-su-dung<%- post.uri %>"> <%- post.title %> </a>
+                        </h3>
+                        <div class="font-light text-gray-600"><%- post.excerpt %></div>
+                    </div>
+                    <% }); %>
+                </div>
+
+                <!-- end list news -->
+                <div id="pagination" class="pagination m-10"></div>
+            </div>
+        </main>
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+        <script src="/js/pagination.min.js"></script>
+
+        <% const items = posts.pagination.offsetPagination.total; %> <% const currentPage =
+        posts.pagination.pageNumber; %>
+
+        <script>
+            $(document).ready(function () {
+                $('#pagination').pagination({
+                    items: Number('<%= items  %>'),
+                    itemsOnPage: 6,
+                    hrefTextPrefix: '/huong-dan-su-dung?page=',
+                    currentPage: Number('<%= currentPage  %>'),
+                    prevText: '&lsaquo;',
+                    nextText: '&rsaquo;',
+                });
+            });
+        </script>
+    </body>
+</html>

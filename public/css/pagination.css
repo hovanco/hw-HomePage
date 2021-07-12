@@ -1,0 +1,32 @@
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul li a,
+.pagination ul li span.current {
+    border: 1px solid #eee;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    --tw-text-opacity: 1;
+    color: rgba(107, 114, 128, var(--tw-text-opacity));
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.pagination ul li.active span {
+    color: #fff;
+    --tw-bg-opacity: 1;
+    background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+    border-color: rgba(29, 78, 216, var(--tw-bg-opacity)) !important;
+}
+
+.pagination ul li:hover a {
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+}

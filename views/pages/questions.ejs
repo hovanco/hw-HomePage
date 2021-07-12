@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+
+        <title>Insa - Câu hỏi thường gặp</title>
+    </head>
+
+    <body class="social">
+        <%- include('../partials/header.ejs'), {user: user} %>
+
+        <main class="main">
+            <div class="py-10 md:pt-20 md:pb-10">
+                <div class="container xl:max-w-7xl mx-auto px-5">
+                    <div class="grid gap-20">
+                        <div class="mx-auto max-w-2xl">
+                            <div class="text-center border-gray-200 mb-16">
+                                <h5 class="text-4xl">Câu hỏi thường gặp</h5>
+                            </div>
+
+                            <div class="mb-10">
+                                <div class="text-2xl font-medium">A. Insa Facebook</div>
+
+                                <div class="questions border-b border-gray-200 mt-5">
+                                    <% questions.facebookQuestions.forEach(function(question, index)
+                                    { %>
+                                    <div class="question">
+                                        <div
+                                            class="
+                                                question-title
+                                                border-t border-gray-200
+                                                py-4
+                                                cursor-pointer
+                                            "
+                                            data-answer="<%= question.answer%>"
+                                        >
+                                            <%= index + 1 %>. <%= question.title%>
+                                            <span class="question-title-arrow"></span>
+                                        </div>
+
+                                        <div
+                                            class="py-4 answer border-t border-gray-200 font-light"
+                                        ></div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <div class="mb-10">
+                                <div class="text-2xl font-medium">B. Insa Pos</div>
+
+                                <div class="questions border-b border-gray-200 mt-5">
+                                    <% questions.posQuestions.forEach(function(question, index) { %>
+                                    <div class="question">
+                                        <div
+                                            class="
+                                                question-title
+                                                border-t border-gray-200
+                                                py-4
+                                                cursor-pointer
+                                            "
+                                            data-answer="<%= question.answer%>"
+                                        >
+                                            <%= index + 1 %>. <%= question.title%>
+                                            <span class="question-title-arrow"></span>
+                                        </div>
+
+                                        <div
+                                            class="py-4 answer border-t border-gray-200 font-light"
+                                        ></div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+
+                            <!-- Shopee 
+                            <div class="mb-10">
+                                <div class="text-2xl font-medium">C. Insa Shopee</div>
+
+                                <div class="questions border-b border-gray-200 mt-5">
+                                    <% questions.shopeeQuestions.forEach(function(question, index) {
+                                    %>
+                                    <div class="question">
+                                        <div
+                                            class="
+                                                question-title
+                                                border-t border-gray-200
+                                                py-4
+                                                cursor-pointer
+                                            "
+                                            data-answer="<%= question.answer%>"
+                                        >
+                                            <%= index + 1 %>. <%= question.title%>
+                                            <span class="question-title-arrow"></span>
+                                        </div>
+
+                                        <div
+                                            class="py-4 answer border-t border-gray-200 font-light"
+                                        ></div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+                            Shopee -->
+
+                            <!-- Website 
+                            <div class="mb-10">
+                                <div class="text-2xl font-medium">D. Insa Website</div>
+
+                                <div class="questions border-b border-gray-200 mt-5">
+                                    <% questions.websiteQuestions.forEach(function(question, index)
+                                    { %>
+                                    <div class="question">
+                                        <div
+                                            class="
+                                                question-title
+                                                border-t border-gray-200
+                                                py-4
+                                                cursor-pointer
+                                            "
+                                            data-answer="<%= question.answer%>"
+                                        >
+                                            <%= index + 1 %>. <%= question.title%>
+                                            <span class="question-title-arrow"></span>
+                                        </div>
+
+                                        <div
+                                            class="py-4 answer border-t border-gray-200 font-light"
+                                        ></div>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                            </div>
+                            Shopee -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>

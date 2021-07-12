@@ -1,0 +1,290 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const
+urlAuth=process.env.URL_AUTH + '/sign-up' ; %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        <link href="/styles/introduce.css" rel="stylesheet" type="text/css" />
+
+        <title>Insa - Nền tảng quản lý và bán hàng đa kênh</title>
+    </head>
+
+    <body class="social">
+        <%- include('../partials/header.ejs') %>
+        <div class="py-3">
+            <div class="container xl:max-w-7xl mx-auto px-5">
+                <span class="font-bold uppercase text-gray-800">
+                    Giới thiệu
+                </span>
+            </div>
+        </div>
+        <main class="main">
+            <!-- home hero -->
+            <div class="home-hero padding-header bg-gray-100">
+                <div class="home-hero_inner">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="card-introduce flex py-12 lg:py-20">
+                            <div class="md:w-2/5 flex items-center">
+                                <div
+                                    class="home-hero_content text-center md:text-left"
+                                >
+                                    <h2>
+                                        Nền tảng quản lý bán hàng đa kênh
+                                    </h2>
+                                    <div class="grid gap-2 my-6">
+                                        <p>Nền tảng duy nhất mà bạn cần để quản lý kinh doanh hiệu quả từ Online đến Offline. Tất cả nằm trong tầm tay với Insa</p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end home hero  -->
+
+            <div class="py-16">
+                <div class="py-10 md:py-20">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="md:grid md:gap-20 md:grid-cols-2 md:items-center">
+                            <div class="mb-5 md:mb-0">
+                                <img
+                                    class="block w-full mx-auto md:mx-0"
+                                    src="images/introduce1.png"
+                                    alt="Quản lý nhiều trang cùng lúc"
+                                />
+                            </div>
+                            <div>
+                                <h3 class="text-3xl">Về Insa</h3>
+                                <div
+                                    class="grid gap-2 font-light text-gray-600 mt-3"
+                                >
+                                    <p>
+                                        INSA là một nền tảng hỗ trợ chủ doanh nghiệp, cá nhân quản lý và bán hàng đa kênh. Insa xây dựng một phần mềm giúp bạn có thể sử dụng điện thoại của mình để nhập hàng, marketing, bán hàng, chăm sóc khách hàng và xây dựng hệ thống đại lý,... một cách đơn giản, dễ dàng, nhiều lợi nhuận trên nền tảng Online đến Offline.	
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 md:py-20 bg-gray-100">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="mx-auto max-w-1xl">
+                            <div class="grid gap-4 text-center">
+                                <h3 class="text-3xl">Lộ trình phát triển</h3>
+                                <div class="mt-5">
+                                    <div class="grid lg:grid-cols-6 lg:grid-rows-2 md:grid-cols-4 md:grid-rows-3 sm:grid-cols-3 sm:grid-rows-4 gap-3">
+                                        <% processes.forEach(function(precess) { %>
+                                        <div class="border rounded-2xl border-gray-200 p-3 text-left">
+                                            <h3 class="text-xl mt-2 mb-3 font-bold" style="color:#4353FF"><%= precess.time%></h3>
+                                            <div class="font-light text-gray-600"><%= precess.description%></div>
+                                        </div>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 md:py-20">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="mx-auto max-w-3xl">
+                            <div class="grid gap-0 text-center">
+                                <h3 class="text-3xl">Sứ mệnh</h3>
+                                <div class="mt-3 grid gap-0 text-center">
+                                    <p class="font-light text-base text-gray-500">
+                                        Chúng tôi xây dựng một ứng dụng khác hàng giúp tất cả những người bán hàng online trên mạng xã hội và offline tại cửa hàng có thể sử dụng điện thoại của họ để nhập hàng, marketing, bánhàng và xây dựng hệ thống đại lý - đơngiản, dễ dàng và nhiều lợi nhuận.
+                                    </p>
+                                    <div class="mt-3">
+                                        <h3 class="font-light text-base text-gray-500" style="color:#4353FF">
+                                            SIMPLE - EASY - PROFITABLE
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-7 grid gap-0 text-center">
+                            <div class="grid lg:grid-cols-5 lg:grid-rows-1 sm:grid-cols-2 sm:grid-rows-3 gap-7">
+                                <div class="p-3 text-center">
+                                    <div class="grid gap-2 text-center">
+                                        <img class="mx-auto" src="images/introduce2.png" alt="Insa" />
+                                        <p class="text-black-500">
+                                            App thương mại điện tử B2B
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-3 text-center">
+                                    <div class="grid gap-2 text-center">
+                                        <img class="mx-auto" src="images/introduce3.png" alt="Insa" />
+                                        <p class="text-black-500">
+                                            Nền tảng hỗ trợ marketing và chăm sóc khách hàng
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-3 text-center">
+                                    <div class="grid gap-2 text-center">
+                                        <img class="mx-auto" src="images/introduce4.png" alt="Insa" />
+                                        <p class="text-black-500">
+                                            Nền tảng quản lý bán hàng online
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-3 text-center">
+                                    <div class="grid gap-2 text-center">
+                                        <img class="mx-auto" src="images/introduce5.png" alt="Insa" />
+                                        <p class="text-black-500">
+                                            Nền tảng quản lý và xây dựng hệ thống đại lý
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="p-3 text-center">
+                                    <div class="grid gap-2 text-center">
+                                        <img class="mx-auto" src="images/introduce6.png" alt="Insa" />
+                                        <p class="text-black-500">
+                                            AI hỗ trợ marketing và bán hàng
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="mx-auto max-w-3xl mt-12">
+                            <div class="grid gap-0 text-center">
+                                <h3 class="text-3xl">Tầm nhìn</h3>
+                                <div class="mt-3 grid gap-0 text-center">
+                                    <p class="font-light text-base text-gray-500">
+                                        Trở thành kỳ lân công nghệ năm 2025
+                                    </p>
+                                    <p class="font-light text-base text-gray-500">
+                                        Trở thành một trong những nền tảng hỗ trợ
+                                    </p>
+                                    <p class="font-light text-base text-gray-500">
+                                        Social Commerce hàng đầu Đông Nam Á
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 md:py-20 bg-gray-100">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div
+                            class="md:grid md:grid-cols-2 md:items-center md:gap-20"
+                        >
+                            <div class="mb-5 md:mb-0 md:order-2">
+                                <img
+                                    class="block w-full mx-auto md:mx-0"
+                                    src="images/introduce1.png"
+                                    alt="Quản lý nhiều trang cùng lúc"
+                                />
+                            </div>
+                            <div class="md:order-1">
+                                <h3 class="text-3xl">Giá trị cốt lõi</h3>
+                                <div
+                                    class="grid gap-2 font-light text-gray-600 mt-3"
+                                >
+                                    <p>
+                                        - Đặt lợi ích khách hàng lên hàng đầu
+                                    </p>
+                                    <p>- Luôn tư duy đột phá và sáng tạo</p>
+                                    <p>- Tăng trưởng thần tốc Blitzscaling</p>
+                                    <p>- Có trách nhiệm trong công việc</p>
+                                    <p>- Tinh thần tập thể cao</p>
+                                    <p>- Quản trị minh bạch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 md:py-20">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="mx-auto max-w-3xl">
+                            <div class="grid gap-0 text-center">
+                                <h3 class="text-3xl">Sản phẩm</h3>
+                            </div>
+                        </div>
+                        <div
+                        class="
+                            grid
+                            products
+                            md:grid-cols-2
+                            lg:grid-cols-3
+                            grid-rows-2
+                            gap-8
+                            xl:gap-10
+                            mt-5
+                        "
+                    >
+                        <% products.forEach(function(product) { %>
+                        <div
+                            href="<%= product.href %>"
+                            class="block product border border-gray-100 p-6 lg:p-7 xl:p-8"
+                        >
+                            <div class="heading">
+                                <div class="flex items-center">
+                                    <div class="icon mr-5">
+                                        <img src="<%= product.logo%>" alt="<%= product.title%>" />
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="product_title font-medium my-4">
+                                <a href="<%= product.href %>"> <%= product.title%> </a>
+                            </h5>
+                            <p class="product_content font-light"><%= product.description%></p>
+                        </div>
+                        <% }); %>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="bg-color-main">
+                    <div class="container xl:max-w-7xl mx-auto px-5">
+                        <div class="grid grid-cols-3 grid-rows-1 gap-7">
+                            <div class="p-3 text-center">
+                                <div class="statistical-content grid gap-2 text-center">
+                                    <p class="number-statistical lg:text-7xl md:text-5xl sm:text-3xl text-white ">
+                                        200+
+                                    </p>
+                                    <p class="lg=text-xl md:text-base sm:text-xl  text-white ">
+                                        Nhân sự
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-3 text-center">
+                                <div class="statistical-content grid gap-2 text-center">
+                                     <p class="number-statistical lg:text-7xl md:text-5xl sm:text-3xl text-white ">
+                                        1000+
+                                    </p>
+                                    <p class="lg=text-xl md:text-base sm:text-xl  text-white ">
+                                        Người dùng
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-3 text-center">
+                                <div class="statistical-content grid gap-2 text-center">
+                                    <p class="number-statistical lg:text-7xl md:text-5xl sm:text-3xl text-white ">
+                                        5+
+                                    </p>
+                                    <p class="lg=text-xl md:text-base sm:text-xl  text-white ">
+                                        Sản phẩm
+                                    </p>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+
+                <!-- sign up -->
+                <%- include('../partials/sign-up.ejs') %>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>

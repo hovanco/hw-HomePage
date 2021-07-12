@@ -1,0 +1,93 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const urlAuth=process.env.URL_AUTH +
+'/sign-up' ; %>
+
+<div class="bg-color-main">
+    <div class="container xl:max-w-7xl mx-auto px-5">
+        <div class="py-5 flex items-center justify-between flex-col md:flex-row">
+            <div class="mb-3 md:mb-0 text-center md:text-left">
+                <span class="text-white text-lg">
+                    Quản lý bán hàng đa kênh chưa bao giờ dễ dàng đến thế
+                </span>
+            </div>
+
+            <a href="<%= urlAuth %>" class="border-2 border-white px-6 py-2 text-white">
+                Bắt đầu
+            </a>
+        </div>
+    </div>
+</div>
+<footer class="footer bg-gray-900">
+    <div class="container xl:max-w-7xl px-5 mx-auto">
+        <div class="footer-top">
+            <div class="mb-8">
+                <img class="logo" src="/images/logo-white.png" alt="Insa" />
+            </div>
+
+            <div class="grid md:grid-cols-9 gap-5">
+                <div class="col-span-2">
+                    <div class="heading">
+                        <h4>Sản phẩm</h4>
+                    </div>
+
+                    <ul>
+                        <li><a href="/insa-facebook">Insa Facebook</a></li>
+                        <li><a href="/insa-pos">Insa Pos</a></li>
+                        <!-- <li><a href="/insa-website">Insa Website</a></li>
+                        <li><a href="/insa-shopee">Insa Shopee</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <div class="heading">
+                        <h4>Về Insa</h4>
+                    </div>
+
+                    <ul>
+                        <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                        <li><a href="/dieu-khoan-su-dung">Điều khoản sử dụng</a></li>
+                        <li><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <div class="heading">
+                        <h4>Hỗ trợ</h4>
+                    </div>
+
+                    <ul>
+                        <li><a href="/huong-dan-su-dung">Hướng dẫn sử dụng</a></li>
+                        <li><a href="/cau-hoi-thuong-gap">Câu hỏi thường gặp</a></li>
+                        <!-- <li><a href="/">Wiki INSA</a></li> -->
+                        <li><a href="/kham-pha">Blog</a></li>
+                        <!-- <li><a href="">Thông tin cập nhật INSA</a></li> -->
+                    </ul>
+                </div>
+                <div class="col-span-3">
+                    <div class="heading">
+                        <h4>Liên hệ</h4>
+                    </div>
+
+                    <ul>
+                        <li>
+                            Địa chỉ: Tầng 8 tòa nhà Toyota, 315 Trường Chinh, Quận Thanh Xuân, Hà
+                            Nội
+                        </li>
+                        <li>Số điện thoại: 033 992 3663</li>
+                    </ul>
+
+                    <div class="heading mt-5">
+                        <h4>Liên kết</h4>
+                    </div>
+                    <div class="socials"><%- include('../partials/social.ejs') %></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© Insa Viet Nam Company Limited. All rights reserved</span>
+        </div>
+    </div>
+</footer>
+
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/main.js"></script>

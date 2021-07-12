@@ -1,0 +1,60 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const urlAuth=process.env.URL_AUTH +
+'/sign-up' ; %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        <link href="/css/page-post-detail.css" rel="stylesheet" type="text/css" />
+
+        <title>Insa - Nền tảng quản lý và bán hàng đa kênh</title>
+    </head>
+
+    <body class="detail">
+        <%- include('../partials/header.ejs') , {user: user}%>
+        <main class="main">
+            <div class="mx-auto py-10 lg:py-20 px-5 container md:max-w-screen-md">
+                <div>
+                    <div class="detail-heading pb-6 mb-6 border-b border-gray-200">
+                        <h2 class="text-4xl mb-5"><%- post.title %></h2>
+
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <%- new Intl.DateTimeFormat('en-US', { day: 'numeric', month:
+                                'long', year: 'numeric' }).format(new Date(post.date)) %>
+                            </div>
+                            <div class="socials text-gray-500">
+                                <%- include('../partials/social.ejs') %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-post-detail"><%- post.content %></div>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 py-10">
+                <div class="container mx-auto xl:max-w-7xl px-5">
+                    <div class="font-medium text-xl mb-8">Có thể bạn quan tâm</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-16">
+                        <% recentPosts.posts.forEach(function(post) { %>
+                        <div class="border border-gray-200 bg-white py-6 px-5">
+                            <span class="text-gray-500 uppercase text-sm">SEP 23, 2021</span>
+                            <h5 class="font-medium text-lg my-3">
+                                <a href="/kham-pha<%- post.uri %>" class="hover:text-blue-800">
+                                    <%- post.title %>
+                                </a>
+                            </h5>
+
+                            <div class="font-light text-gray-600"><%- post.excerpt %></div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>

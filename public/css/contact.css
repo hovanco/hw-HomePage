@@ -1,0 +1,9 @@
+.formContact input.error {
+    border-color: red !important;
+}
+
+.formContact label.error {
+    display: block;
+    color: red;
+    margin-top: 5px;
+}

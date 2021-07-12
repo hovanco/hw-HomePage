@@ -1,0 +1,37 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const urlAuth=process.env.URL_AUTH +
+'/sign-up' ; %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+
+        <title>Insa - Nền tảng quản lý và bán hàng đa kênh</title>
+    </head>
+
+    <body>
+        <div class="flex min-h-screen flex-col">
+            <div class="border-b py-3 flex items-center justify-center">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/logo_v2.png" alt="Insa" />
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center justify-center flex-1">
+                <div class="text-center px-4">
+                    <h3 class="text-4xl font-bold">Dịch vụ không đúng</h3>
+                    <p class="mt-5 mb-10 text-gray-700">
+                        Gói đăng ký không tồn tại, vui lòng quay lại để chọn lại dịch vụ bạn cần
+                        dùng
+                    </p>
+                    <a
+                        href="/bao-gia"
+                        class="bg-blue-700 inline-block text-white px-8 py-3 hover:bg-blue-500"
+                        >Quay lại
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+
+        <title>Insa - Nền tảng quản lý và bán hàng đa kênh</title>
+    </head>
+    <body>
+        <!-- header -->
+        <%- include('../partials/header.ejs'), {user: user} %>
+        <!-- main -->
+        <main class="main my-12">
+            <div class="container xl:max-w-7xl mx-auto px-5">
+                <!-- top news -->
+                <div
+                    class="
+                        block
+                        lg:flex lg:flex-row-reverse
+                        items-center
+                        justify-center
+                        bg-gray-100
+                    "
+                >
+                    <div class="flex-1">
+                        <% if (postPick.featuredImage) { %>
+                        <a href="/kham-pha<%= postPick.uri %>" class="block w-full">
+                            <img
+                                src="<%- postPick.featuredImage.node.sourceUrl%>"
+                                alt="<%- postPick.title %>"
+                                style="object-fit: cover"
+                            />
+                        </a>
+
+                        <%} else { %>
+                        <a
+                            href="/kham-pha<%= postPick.uri %>"
+                            class="block w-full"
+                            style="padding-bottom: 75%; background-color: aliceblue"
+                        >
+                        </a>
+                        <% } %>
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="p-8">
+                            <div class="uppercase text-gray-600 text-xs">
+                                <%- new Intl.DateTimeFormat('en-US', { day: 'numeric', month:
+                                'long', year: 'numeric' }).format(new Date(postPick.date)) %>
+                            </div>
+                            <h3 class="text-4xl mt-2 mb-3">
+                                <a href="/kham-pha<%- postPick.uri %>"><%- postPick.title %> </a>
+                            </h3>
+
+                            <div class="font-light text-gray-600"><%- postPick.excerpt %></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end top news -->
+
+                <!-- list news -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                    <% posts.posts.forEach(function(post) { %>
+                    <div class="border border-gray-200 p-6">
+                        <div class="uppercase text-gray-600 text-xs">
+                            <%- new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'long',
+                            year: 'numeric' }).format(new Date(post.date)) %>
+                        </div>
+                        <h3 class="text-xl mt-2 mb-3">
+                            <a href="/kham-pha<%- post.uri %>"> <%- post.title %> </a>
+                        </h3>
+                        <div class="font-light text-gray-600"><%- post.excerpt %></div>
+                    </div>
+                    <% }); %>
+                </div>
+
+                <!-- end list news -->
+                <div id="pagination" class="pagination m-10"></div>
+            </div>
+        </main>
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+        <script src="/js/pagination.min.js"></script>
+
+        <% const items = posts.pagination.offsetPagination.total; %> <% const currentPage =
+        posts.pagination.pageNumber; %>
+
+        <script>
+            $(document).ready(function () {
+                $('#pagination').pagination({
+                    items: Number('<%= items  %>'),
+                    itemsOnPage: 6,
+                    hrefTextPrefix: '/kham-pha?page=',
+                    currentPage: Number('<%= currentPage  %>'),
+                    prevText: '&lsaquo;',
+                    nextText: '&rsaquo;',
+                });
+            });
+        </script>
+    </body>
+</html>

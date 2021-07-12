@@ -1,0 +1,101 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const
+urlAuth=process.env.URL_AUTH + '/sign-up' ; %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        <link href="/styles/contact.css" rel="stylesheet" type="text/css" />
+
+        <title>Insa - Nền tảng quản lý và bán hàng đa kênh</title>
+    </head>
+
+    <body class="home">
+        <%- include('../partials/header.ejs') %>
+        <main class="main">
+            <div class="container xl:max-w-7xl mx-auto px-5">
+                <div class="pt-20 pb-10">
+                    <div class="max-w-xs mx-auto">
+                        <div class="text-center mb-4">
+                            <h3 class="text-4xl mb-4">Liên hệ</h3>
+                            <p>
+                                Để lại thông tin của bạn, chúng tôi sẽ liên hệ
+                                và hỗ trợ bạn
+                            </p>
+                        </div>
+
+                        <a href="/lien-he">Oke</a>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <div class="border-b border-gray-200 mb-4 pb-3">
+                        <span class="text-xl">Văn phòng </span>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+                    >
+                        <div>
+                            <div class="font-medium text-blue-700 mb-5">
+                                HÀ NỘI
+                            </div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 8, Tòa nhà TOYOTA Thanh Xuân, 315
+                                    Trường Chinh, Khương Mai. Thanh Xuân, Hà Nội
+                                </li>
+                                <li>(024)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-blue-700 mb-5">
+                                HÀ NỘI
+                            </div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Lô số MG 202, Khu đô thị Vincom, Phường Điện
+                                    Biên, Thành phố Thanh Hóa
+                                </li>
+                                <li>(023)7 730 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-blue-700 mb-5">
+                                ĐÀ NẴNG
+                            </div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 12, Vĩnh Trung Plaza, 255-257 Hùng
+                                    Vương, Phường Vĩnh Trung, Quận Thanh Khê,
+                                    Thành phố Đà Nẵng
+                                </li>
+                                <li>(024)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-blue-700 mb-5">
+                                HỒ CHÍ MINH
+                            </div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 7, toà nhà Citilight, 45 Võ Thị Sáu,
+                                    Phường Đa Kao, Quận 1, TPHCM
+                                </li>
+                                <li>(028)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+       
+    </body>
+</html>

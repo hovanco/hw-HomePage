@@ -1,0 +1,273 @@
+<% const urlStoreEncode=encodeURI(process.env.URL_STORE); %> <% const urlAuth=process.env.URL_AUTH +
+'/sign-up' ; %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        <link href="/css/contact.css" rel="stylesheet" type="text/css" />
+        <link href="/css/jquery.toast.min.css" rel="stylesheet" type="text/css" />
+
+        <title>Insa - Liên hệ</title>
+    </head>
+
+    <body class="home">
+        <%- include('../partials/header.ejs') %>
+        <main class="main">
+            <div class="container xl:max-w-7xl mx-auto px-5">
+                <div class="pt-20 pb-10">
+                    <div class="max-w-sm mx-auto">
+                        <div class="text-center mx-auto mb-4 max-w-xs">
+                            <h3 class="text-4xl mb-4">Liên hệ</h3>
+                            <p class="text-gray-500">
+                                Để lại thông tin của bạn, chúng tôi sẽ liên hệ và hỗ trợ bạn
+                            </p>
+                        </div>
+
+                        <form class="formContact" id="formContact" method="post" action="">
+                            <div
+                                class="
+                                    loading-form
+                                    hidden
+                                    fixed
+                                    top-0
+                                    left-0
+                                    bottom-0
+                                    right-0
+                                    w-screen
+                                    justify-center
+                                    items-center
+                                "
+                                style="background: rgba(255, 255, 255, 0.7)"
+                            >
+                                <div class="lds-ripple">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <input
+                                    name="name"
+                                    placeholder="Họ tên*"
+                                    class="
+                                        block
+                                        w-full
+                                        border border-gray-200
+                                        py-3
+                                        px-4
+                                        focus:border-blue-700
+                                    "
+                                    required
+                                />
+                            </div>
+
+                            <div class="mb-5">
+                                <input
+                                    name="phoneNo"
+                                    placeholder="Số điện thoại*"
+                                    class="
+                                        block
+                                        w-full
+                                        border border-gray-200
+                                        py-3
+                                        px-4
+                                        focus:border-blue-700
+                                    "
+                                    required
+                                />
+                            </div>
+                            <div class="mb-5">
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="Email*"
+                                    class="
+                                        block
+                                        w-full
+                                        border border-gray-200
+                                        py-3
+                                        px-4
+                                        focus:border-blue-700
+                                    "
+                                    required
+                                />
+                            </div>
+                            <div class="mb-5">
+                                <textarea
+                                    rows="3"
+                                    placeholder="Địa chỉ"
+                                    class="
+                                        block
+                                        w-full
+                                        border border-gray-200
+                                        py-3
+                                        px-4
+                                        focus:border-blue-700
+                                    "
+                                    name="address"
+                                ></textarea>
+                            </div>
+
+                            <div class="mb-5">
+                                <button
+                                    type="submit"
+                                    class="
+                                        bg-color-main
+                                        text-white
+                                        flex
+                                        items-center
+                                        justify-center
+                                        w-full
+                                        py-3
+                                        px-4
+                                        hover:opacity-90
+                                    "
+                                >
+                                    Gửi
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <div class="border-b border-gray-200 mb-4 pb-3">
+                        <span class="text-xl">Văn phòng </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div>
+                            <div class="font-medium text-color-main mb-5">HÀ NỘI</div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 8, Tòa nhà TOYOTA Thanh Xuân, 315 Trường Chinh, Khương Mai.
+                                    Thanh Xuân, Hà Nội
+                                </li>
+                                <li>(024)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-color-main mb-5">THANH HÓA</div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Lô số MG 202, Khu đô thị Vincom, Phường Điện Biên, Thành phố
+                                    Thanh Hóa
+                                </li>
+                                <li>(023)7 730 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-color-main mb-5">ĐÀ NẴNG</div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 12, Vĩnh Trung Plaza, 255-257 Hùng Vương, Phường Vĩnh
+                                    Trung, Quận Thanh Khê, Thành phố Đà Nẵng
+                                </li>
+                                <li>(024)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-medium text-color-main mb-5">HỒ CHÍ MINH</div>
+                            <ul class="grid gap-3">
+                                <li>
+                                    Tầng 7, toà nhà Citilight, 45 Võ Thị Sáu, Phường Đa Kao, Quận 1,
+                                    TPHCM
+                                </li>
+                                <li>(028)7 309 8885</li>
+                                <li>info@gco.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.toast.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.validator.addMethod(
+                    'matches',
+                    function (value, element, regexp) {
+                        return this.optional(element) || regexp.test(value);
+                    },
+                    'Please check your input.',
+                );
+            
+                $('.loading-form').css({ display: 'none' });
+
+                $('#formContact').validate({
+                    rules: {
+                        name: 'required',
+                        phoneNo: {
+                            required: true,
+                            matches: /^(0|\+84)(9|3|7|8|5){1}([0-9]{8})$/g,
+                        },
+                        email: {
+                            required: true,
+                            email: true,
+                        },
+                    },
+                    messages: {
+                        name: {
+                            required: 'Điền tên của bạn',
+                        },
+                        phoneNo: {
+                            required: 'Điền số điện thoại của bạn',
+                            matches: 'Số điện thoại không đúng',
+                        },
+                        email: 'Điền địa chỉ email của bạn',
+                    },
+                    submitHandler: function (form, e) {
+                        e.preventDefault();
+                        $('.loading-form').css({ display: 'flex' });
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/lien-he',
+                            dataType: 'html',
+                            data: $('form').serialize(),
+                            success: function (result) {
+                                $('.loading-form').css({ display: 'none' });
+                                $('#formContact')[0].reset();
+                                $.toast({
+                                    heading: 'Thành công',
+                                    text: 'Cảm ơn bạn đã gửi thông tin liên hệ cho Insa',
+                                    icon: 'success',
+                                    position: 'top-right',
+                                    showHideTransition: 'slide',
+                                });
+                            },
+                            error: function (error) {
+                                $.toast({
+                                    heading: 'Lỗi',
+                                    text: 'Đã xảy ra lỗi, xin vui lòng thử lại',
+                                    icon: 'error',
+                                    position: 'top-right',
+                                    showHideTransition: 'slide',
+                                });
+                            },
+                        });
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

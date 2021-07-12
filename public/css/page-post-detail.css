@@ -1,0 +1,25 @@
+.page-post-detail h2 {
+    font-size: 36px;
+}
+
+.page-post-detail h2 {
+    font-size: 30px;
+}
+
+.page-post-detail h3 {
+    font-size: 25px;
+}
+
+.page-post-detail h4 {
+    font-size: 20px;
+}
+
+.page-post-detail h1,
+.page-post-detail h2,
+.page-post-detail h3,
+.page-post-detail h4,
+.page-post-detail h5,
+.page-post-detail h6,
+.page-post-detail p {
+    margin-bottom: 15px;
+}
